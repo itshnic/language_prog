@@ -21,19 +21,41 @@ else
 // ЗАДАЧА 15
 Console.WriteLine("Введите день недели!");
 int day = Convert.ToInt32(Console.ReadLine());
-int[] weekend = { 6, 7 };
-if (day <= 7)
+string[] weekday = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
+
+void nameDay(string[] arr, int day)
 {
-	int index = 0;
-	while (weekend.Length > index)
+	if (day <= 7 && day > 0)
 	{
-		if (weekend[index] == day)
+		int index = 0;
 		{
-			Console.WriteLine($"Ура выходной! -> {day}");
-			break;
+			if (day > 5)
+			{
+				while (arr.Length > index)
+				{
+					if (day == (index + 1))
+					{
+						Console.WriteLine($"{day} -> {arr[index]} <<ВЫХОДНОЙ>>");
+						break;
+					}
+					index++;
+				}
+			}
+			else
+			{
+				while (arr.Length > index)
+				{
+					if (day == (index + 1))
+					{
+						Console.WriteLine($"{day} -> {arr[index]} <<Пора на работу!>>))");
+						break;
+					}
+					index++;
+				}
+			}
 		}
-		index++;
 	}
+	else Console.WriteLine($"Введено не корректное число -> {day}");
 }
-else if (day <= 5) Console.WriteLine($"Работаем братья( -> {day}");
-else Console.WriteLine($"Введено не корректное число -> {day}");
+nameDay(weekday, day);
+

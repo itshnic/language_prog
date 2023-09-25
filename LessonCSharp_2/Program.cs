@@ -1,41 +1,52 @@
 ﻿// ЗАДАЧА 10
-Console.WriteLine("Введите трехзначное число!");
+int Input(string content)
+{
+	Console.WriteLine($"{content}");
+	int number = Convert.ToInt32(Console.ReadLine());
+	return number;
+}
 
-string number = Console.ReadLine();
-
-if (number.Length == 3)
-	Console.WriteLine($"{number} -> {number[1]}");
-else
-	Console.WriteLine($"Введено не трехзначное число -> {number}");
+void SearchTwo(int num)
+{
+	string numString = Convert.ToString(num);
+	if (numString.Length == 3)
+		Console.WriteLine($"Вторая цифра {num} -> {numString[1]}");
+	else
+		Console.WriteLine($"Введено не трехзначное число -> {num}");
+}
+SearchTwo(Input("Введите трехзначное число"));
 
 // ЗАДАЧА 13
-Console.WriteLine("Введите число из трех и более цифр!");
 
-string number_2 = Console.ReadLine();
+void SearchThree(int num)
+{
+	string numString = Convert.ToString(num);
+	if (numString.Length == 2)
+		Console.WriteLine($"Третьей цифры нет -> {num}");
+	else if (numString.Length >= 3)
+		Console.WriteLine($"Третья цифра {num} -> {numString[2]}");
+	else if (num < 1)
+		Console.WriteLine($"Введено не корректное число -> {num}");
+}
 
-if (number_2.Length >= 3)
-	Console.WriteLine($"{number_2} -> {number_2[2]}");
-else
-	Console.WriteLine($"В числе менее 3-х цифр -> {number_2}");
+SearchThree(Input("Введите число из трех и более цифр!"));
 
 // ЗАДАЧА 15
-Console.WriteLine("Введите день недели!");
-int day = Convert.ToInt32(Console.ReadLine());
-string[] weekday = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
 
-void nameDay(string[] arr, int day)
+void nameDay(int num)
 {
-	if (day <= 7 && day > 0)
+	string[] weekday = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
+	if (num <= 7 && num > 0)
 	{
 		int index = 0;
 		{
-			if (day > 5)
+			if (num > 5)
 			{
-				while (arr.Length > index)
+				while (weekday.Length > index)
 				{
-					if (day == (index + 1))
+					if (num == (index + 1))
 					{
-						Console.WriteLine($"{day} -> {arr[index]} <<ВЫХОДНОЙ>>");
+						Console.WriteLine($"{num} день это -> {weekday[index]} <<ВЫХОДНОЙ>>");
 						break;
 					}
 					index++;
@@ -43,11 +54,11 @@ void nameDay(string[] arr, int day)
 			}
 			else
 			{
-				while (arr.Length > index)
+				while (weekday.Length > index)
 				{
-					if (day == (index + 1))
+					if (num == (index + 1))
 					{
-						Console.WriteLine($"{day} -> {arr[index]} <<Пора на работу!>>))");
+						Console.WriteLine($"{num} день это -> {weekday[index]} <<Пора на работу!>>))");
 						break;
 					}
 					index++;
@@ -55,7 +66,7 @@ void nameDay(string[] arr, int day)
 			}
 		}
 	}
-	else Console.WriteLine($"Введено не корректное число -> {day}");
+	else Console.WriteLine($"Введено не корректное число -> {num}");
 }
-nameDay(weekday, day);
+nameDay(Input("Введите день недели!"));
 

@@ -5,14 +5,17 @@ int Input(string content)
 	int number = Convert.ToInt32(Console.ReadLine());
 	return number;
 }
-
+void Error(int number, string text)
+{
+	Console.WriteLine($"{text} -> {number}");
+}
 void SearchTwo(int num)
 {
 	string numString = Convert.ToString(num);
 	if (numString.Length == 3)
 		Console.WriteLine($"Вторая цифра {num} -> {numString[1]}");
-	else
-		Console.WriteLine($"Введено не трехзначное число -> {num}");
+	else Error(num, "Введено не трехзначное число");
+
 }
 SearchTwo(Input("Введите трехзначное число"));
 
@@ -25,48 +28,44 @@ void SearchThree(int num)
 		Console.WriteLine($"Третьей цифры нет -> {num}");
 	else if (numString.Length >= 3)
 		Console.WriteLine($"Третья цифра {num} -> {numString[2]}");
-	else if (num < 1)
-		Console.WriteLine($"Введено не корректное число -> {num}");
+	else if (num < 2)
+		Error(num, "Введено не корректное число");
 }
 
 SearchThree(Input("Введите число из трех и более цифр!"));
 
 // ЗАДАЧА 15
+void SearchDay(string[] arr, int number, string content)
+{
+	int index = 0;
+	while (arr.Length > index)
+	{
+		if (number == (index + 1))
+		{
+			Console.WriteLine($"{number} {content} -> {arr[index]}");
+			break;
+		}
+		index++;
+	}
+}
 
-void nameDay(int num)
+void NameDay(int num)
 {
 	string[] weekday = { "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье" };
 	if (num <= 7 && num > 0)
 	{
-		int index = 0;
 		{
 			if (num > 5)
 			{
-				while (weekday.Length > index)
-				{
-					if (num == (index + 1))
-					{
-						Console.WriteLine($"{num} день это -> {weekday[index]} <<ВЫХОДНОЙ>>");
-						break;
-					}
-					index++;
-				}
+				SearchDay(weekday, num, "это выходной день");
 			}
 			else
 			{
-				while (weekday.Length > index)
-				{
-					if (num == (index + 1))
-					{
-						Console.WriteLine($"{num} день это -> {weekday[index]} <<Пора на работу!>>))");
-						break;
-					}
-					index++;
-				}
+				SearchDay(weekday, num, "это рабочий день");
 			}
 		}
 	}
-	else Console.WriteLine($"Введено не корректное число -> {num}");
+	else Error(num, "Введено не корректное число");
 }
-nameDay(Input("Введите день недели!"));
+NameDay(Input("Введите день недели!"));
 

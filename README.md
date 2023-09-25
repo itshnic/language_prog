@@ -12,14 +12,57 @@
 
 ### 4. Встроенные функции:
 
-```Bash
+```C#
 Write(); Вывод в одну строку
 WriteLine(); В конце перейти на новую строку
 ReadLine(); Считать строку из терминала
+
 int b = int.Parse(Console.ReadLine()); int.Parse приведение к типу number (будет предупреждение)
+
 int b = Convert.ToInt32(Console.ReadLine()); более правильное приведение к типу number
+
+string b = Convert.ToString(Console.ReadLine()); приведение к типу STRING
 
 Пример с конкатинацией:
 Console.Write($"введите ваше имя: {переменная}"); или
 Console.Write("введите ваше имя: {0} {1}", переменная1, переменная2);
+```
+
+### 5. Ветвления
+
+```C#
+if(условие){} else if(условие){}else{}
+
+switch(параметр){
+case вариант: действие break;
+case вариант: действие break;
+default: действие;
+}
+
+```
+
+### 6. Циклы
+
+```C#
+while(условие){body break(выход); or confirm(повтор цикла);}
+do{body break(выход); or confirm(повтор цикла);}
+while(условие);
+for(int i=0, условие, счетчик){body}
+foreach(int key in type[]arr){body}
+
+```
+
+### 7. Массивы
+
+```C#
+type []name = {};s
+string []text = {"text1", "text2"};
+
+```
+
+### 8. Function
+
+```C#
+void name(arg1, arg2){body function} не возвращает ни чего
+int or string name(arg1, arg2){body function return}
 ```

@@ -16,6 +16,9 @@
 Write(); Вывод в одну строку
 WriteLine(); В конце перейти на новую строку
 ReadLine(); Считать строку из терминала
+Math.Pow(x,степень); возведение в степень
+Math.Sqrt(x,степень); корень квадратный
+Math.Random(от, до(не включительно)) - рандомные числа
 
 int b = int.Parse(Console.ReadLine()); int.Parse приведение к типу number (будет предупреждение)
 
@@ -55,9 +58,10 @@ foreach(int key in type[]arr){body}
 ### 7. Массивы
 
 ```C#
-type []name = {};s
+type []name = {};
+int[] numbers = new int[указать количество символов]; для заполнения циклом
 string []text = {"text1", "text2"};
-
+Массивы менять и дополнять нельзя, только копировать.
 ```
 
 ### 8. Function

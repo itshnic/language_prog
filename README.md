@@ -13,19 +13,20 @@
 ### 4. Встроенные функции:
 
 ```C#
-Write(); Вывод в одну строку
-WriteLine(); В конце перейти на новую строку
-ReadLine(); Считать строку из терминала
+Console.Write(); Вывод в одну строку
+Console.WriteLine(); В конце перейти на новую строку
+Console.ReadLine(); Считать строку из терминала
 Math.Pow(x,степень); возведение в степень
 Math.Sqrt(x,степень); корень квадратный
 Math.Random(от, до(не включительно)) - рандомные числа
+new Random().Next(от, до(не включ)) - рандомные числа.
 
 int b = int.Parse(Console.ReadLine()); int.Parse приведение к типу number (будет предупреждение)
 
 int b = Convert.ToInt32(Console.ReadLine()); более правильное приведение к типу number
 
 string b = Convert.ToString(Console.ReadLine()); приведение к типу STRING
-new Random().Next(от, до(не включ)) - рандомные числа.
+
 Пример с конкатинацией:
 Console.Write($"введите ваше имя: {переменная}"); или
 Console.Write("введите ваше имя: {0} {1}", переменная1, переменная2);
@@ -68,5 +69,5 @@ string []text = {"text1", "text2"};
 
 ```C#
 void name(arg1, arg2){body function} не возвращает ни чего
-int or string name(arg1, arg2){body function return}
+int or string or int[] name(arg1, arg2){body function return}
 ```

@@ -4,46 +4,69 @@
 	int number = Convert.ToInt32(Console.ReadLine());
 	return number;
 }
-/* void Print(int res, string text = null)
-{
-	Console.WriteLine($"{text} {res}");
-} */
+
 /* Задача 32: Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
 [-4, -8, 8, 2]-> [4, 8, -8, -2]
  */
 int[] Rand(int number_1, int number_2, int length)
 {
-	int[] arr = new int[length];
-	for (int i = 0; i < length; i++)
+
+	if (number_2 > number_1)
 	{
-		arr[i] = new Random().Next(number_1, number_2);
-		/* Print(arr[i], "/b"); */
-		Console.Write($"{arr[i]} ");
+		int[] arr = new int[length];
+		for (int i = 0; i < length; i++)
+		{
+			arr[i] = new Random().Next(number_1, number_2);
+			Console.Write($"{arr[i]} ");
+		}
+		Console.WriteLine("");
+		return arr;
 	}
-	return arr;
+	else
+	{
+		Console.WriteLine($"Второе число {number_2} меньше первого {number_1} ");
+		int[] arr = new int[0];
+		return arr;
+	}
 }
 
-void signOff(int[] arr)
+/* void signOff(int[] arr)
 {
-	Console.WriteLine("Меняем знак - ");
-	int[] arrSignOff = new int[arr.Length];
-	for (int i = 0; i < arr.Length; i++)
+	if (arr.Length > 0)
 	{
-		arrSignOff[i] = arr[i] * (-1);
-
-		Console.Write($"{arrSignOff[i]} ");
+		Console.WriteLine("Меняем знак - ");
+		int[] arrSignOff = new int[arr.Length];
+		for (int i = 0; i < arr.Length; i++)
+		{
+			arrSignOff[i] = arr[i] * (-1);
+			Console.Write($"{arrSignOff[i]} ");
+		}
 	}
-}
 
-int[] resRand = Rand(Input("Введите первое число"), Input("Введите второе число"), Input("Введите длину массива"));
+} */
 
-signOff(resRand);
+int[] resRand = Rand(Input("Введите первое число"), Input("Введите второе число - больше первого"), Input("Введите длину массива"));
+
+/* signOff(resRand); */
 
 /* Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
 4; массив[6, 7, 19, 345, 3]->нет
 - 3; массив[6, 7, 19, 345, 3]->да */
 
+void Search(int[] arr, int number)
+{
+	if (arr.Length > 0)
+	{
+		for (int i = 0; i < arr.Length; i++)
+		{
+			if (number == Math.Abs(arr[i]))
+				Console.Write($"{arr[i]} key -> {i}; ");
+		}
+	}
+	else Console.Write($"Ошибка");
+}
 
+Search(resRand, Input("Введите искомое число"));
 
 /* Задача 35: Задайте одномерный массив из 123 случайных чисел. Найдите количество элементов массива, значения которых лежат в отрезке [10, 99].
 Пример для массива из 5, а не 123 элементов. В своём решении сделайте для 123

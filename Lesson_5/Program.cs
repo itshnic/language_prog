@@ -1,14 +1,14 @@
-﻿int Input(string content)
+﻿/* int Input(string content)
 {
 	Console.WriteLine($"{content}");
 	int number = Convert.ToInt32(Console.ReadLine());
 	return number;
-}
+} */
 
 /* Задача 32: Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
 [-4, -8, 8, 2]-> [4, 8, -8, -2]
  */
-int[] Rand(int number_1, int number_2, int length)
+/* int[] Rand(int number_1, int number_2, int length)
 {
 
 	if (number_2 > number_1)
@@ -28,7 +28,7 @@ int[] Rand(int number_1, int number_2, int length)
 		int[] arr = new int[0];
 		return arr;
 	}
-}
+} */
 
 /* void signOff(int[] arr)
 {
@@ -45,7 +45,7 @@ int[] Rand(int number_1, int number_2, int length)
 
 } */
 
-int[] resRand = Rand(Input("Введите первое число"), Input("Введите второе число - больше первого"), Input("Введите длину массива"));
+/* int[] resRand = Rand(Input("Введите первое число"), Input("Введите второе число - больше первого"), Input("Введите длину массива")); */
 
 /* signOff(resRand); */
 
@@ -118,3 +118,75 @@ Quantity(resRand, segment); */
 	}
 }
 Work(resRand); */
+
+
+
+/* Task - 1
+int CountEvenElements(int[] array)
+{
+	// Введите свое решение ниже
+	int count = 0;
+	for (int i = 0; i < array.Length; i++)
+	{
+		if (array[i] % 2 == 0)
+			count++;
+	}
+	return count;
+}
+
+
+void PrintArray(int[] array)
+{
+	// Введите свое решение ниже
+	for (int i = 0; i < array.Length; i++)
+	{
+		Console.Write($"{array[i]} ");
+	}
+	Console.WriteLine("");
+}
+
+int[] array = new int[] { 100, 102, 105, 166, 283, 764, 300, 499, 133 };
+
+
+Console.WriteLine("Массив:");
+
+int evenCount = CountEvenElements(array);
+PrintArray(array);
+Console.WriteLine($"Количество четных элементов: {evenCount}");
+ */
+
+//Task-2
+
+int SumOddElements(int[] array)
+{
+	// Введите свое решение ниже
+	int summ = 0;
+
+	for (int key = 0; key < array.Length; key++)
+	{
+		/* if (key % 2 == 1) */
+		summ += key % 2 == 1 ? array[key] : 0;
+	}
+	return summ;
+}
+void PrintArray(int[] array)
+{
+	// Введите свое решение ниже
+
+	for (int i = 0; i < array.Length; i++)
+	{
+		Console.Write($"{array[i]} ");
+	}
+	Console.WriteLine("");
+}
+
+int[] array = new int[] { 12, 64, 28, 93, 35, 47, 6, 72, 58, 21 };
+
+
+
+// Не удаляйте строки ниже
+PrintArray(array);
+int sumOdd = SumOddElements(array);
+Console.WriteLine($"Сумма нечетных элементов: {sumOdd}");
+
+

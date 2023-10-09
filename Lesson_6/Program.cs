@@ -1,63 +1,67 @@
-﻿int Input(string content)
+int Question(string text)
 {
-	Console.WriteLine($"{content}");
-	int number = Convert.ToInt32(Console.ReadLine());
-	return number;
+	Console.Write($"{text} - ");
+	string res = Console.ReadLine();
+	if (res == "") return 0;
+	else
+	{
+		int num = Convert.ToInt32(res);
+		return num;
+	}
+
 }
 
-/* int[] CreateArr(int number_1, int number_2, int length)
+/* int[] Prompt(string text)
 {
+	int length = Question(text);
 
-	if (number_2 > number_1)
+	if (length > 0)
 	{
-		int[] arr = new int[length];
-		for (int i = 0; i < length; i++)
+		int[] arrNum = new int[length];
+		Console.WriteLine();
+		arrNum[0] = Question("Введите первое число ");
+		Console.WriteLine();
+		for (int i = 1; i < length; i++)
 		{
-			arr[i] = new Random().Next(number_1, number_2);
-			Console.Write($"{arr[i]} ");
+			arrNum[i] = Question("Введите следующее число ");
+			Console.WriteLine();
 		}
-		Console.WriteLine("");
-		return arr;
+		return arrNum;
 	}
 	else
 	{
-		Console.WriteLine($"Второе число {number_2} меньше первого {number_1} ");
-		int[] arr = new int[0];
-		return arr;
+		Console.WriteLine("Число должно быть целым и положительным)");
+		int[] arrNum = new int[0];
+		return arrNum;
 	}
 }
 
-void PrintArray(int[] array)
+void CountNumber(int[] arr)
 {
-	Console.Write("[")
-
-	for (int i = 0; i < array.Length; i++)
+	int count = 0;
+	for (int i = 0; i < arr.Length; i++)
 	{
-		Console.Write($"{array[i]}\t");
+		if (arr[i] > 0) count++;
+		if (i > 0) Console.Write(", ");
+		Console.Write($"{arr[i]}");
 	}
-	Console.Write("\b\b\b\b\b] -> ")
+	Console.Write($"-> {count}");
 	Console.WriteLine();
 }
+CountNumber(Prompt("Введите кол-во чисел ")); */
 
-int[] resRand = CreateArr(Input("Введите первое число"), Input("Введите второе число - больше первого"), Input("Введите длину массива")); */
-
-/* Задача 40: Напишите программу, которая принимает на вход три числа и проверяет, может ли существовать треугольник с сторонами такой длины.
-
-int[] Bit (int number)
+void DotMeeting()
 {
-	int[] arrBit = new int[];
-	for ()
-}
-void PrintArray(int[] array)
-{
-	for (int i = 0; i < array.Length; i++)
-	{
-		Console.Write($"{array[i]}");
-	}
+	int b1 = Question("Введите точку b1");
+	int k1 = Question("Введите точку k1");
+	int b2 = Question("Введите точку b2");
+	int k2 = Question("Введите точку k2");
+
+	double y = (b1 * k2 - b2 * k1) / (k2 - k1);
+	y = Math.Round(y, 1);
+	double x = (y - b2) / k2;
+	x = Math.Round(x, 1);
 	Console.WriteLine();
+	Console.WriteLine($"b1={b1}, k1={k1}, b2={b2}, k2={k2} -> ({y},{x})");
 }
-Задача 44: Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
-Если N = 5 -> 0 1 1 2 3
-Если N = 3 -> 0 1 1
-Если N = 7 -> 0 1 1 2 3 5 8
-Задача 45: Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования. */
+DotMeeting();

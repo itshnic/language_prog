@@ -11,7 +11,7 @@
 
 }
 
-int[] Prompt(string text)
+/* int[] Prompt(string text)
 {
 	int length = Question(text);
 
@@ -48,4 +48,20 @@ void CountNumber(int[] arr)
 	Console.Write($"-> {count}");
 	Console.WriteLine();
 }
-CountNumber(Prompt("Введите кол-во чисел "));
+CountNumber(Prompt("Введите кол-во чисел ")); */
+
+void DotMeeting()
+{
+	int b1 = Question("Введите точку b1");
+	int k1 = Question("Введите точку k1");
+	int b2 = Question("Введите точку b2");
+	int k2 = Question("Введите точку k2");
+
+	double y = (b1 * k2 - b2 * k1) / (k2 - k1);
+	y = Math.Round(y, 1);
+	double x = (y - b2) / k2;
+	x = Math.Round(x, 1);
+	Console.WriteLine();
+	Console.WriteLine($"b1={b1}, k1={k1}, b2={b2}, k2={k2} -> ({y},{x})");
+}
+DotMeeting();

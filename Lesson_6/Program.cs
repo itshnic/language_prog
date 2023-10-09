@@ -52,16 +52,15 @@ CountNumber(Prompt("Введите кол-во чисел ")); */
 
 void DotMeeting()
 {
-	int b1 = Question("Введите точку b1");
-	int k1 = Question("Введите точку k1");
-	int b2 = Question("Введите точку b2");
-	int k2 = Question("Введите точку k2");
+	double b1 = Question("Введите точку b1");
+	double k1 = Question("Введите точку k1");
+	double b2 = Question("Введите точку b2");
+	double k2 = Question("Введите точку k2");
 
-	double y = (b1 * k2 - b2 * k1) / (k2 - k1);
-	y = Math.Round(y, 1);
-	double x = (y - b2) / k2;
-	x = Math.Round(x, 1);
+	double x = (b1 - b2) / (k2 - k1);
+	double y = k1 * x + b1;
+
 	Console.WriteLine();
-	Console.WriteLine($"b1={b1}, k1={k1}, b2={b2}, k2={k2} -> ({y},{x})");
+	Console.WriteLine($"b1={b1}, k1={k1}, b2={b2}, k2={k2} -> ({x},{y})");
 }
 DotMeeting();

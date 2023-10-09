@@ -55,7 +55,19 @@ do{body break(выход); or confirm(повтор цикла);}
 while(условие);
 for(int i=0; условие; счетчик){body}
 foreach(int key in type[]arr){body}
+Цикл для двумерного массива
+void PrintArr(double[,] arry)
+{
+    for (int i = 0; i < arry.GetLength(0); i++)
+    {
+        for (int j = 0; j < arry.GetLength(1); j++)
+        {
+            Console.Write($"{arry[i,j]:f2}\t");
+        }
+        Console.WriteLine();
+    }
 
+}
 ```
 
 ### 7. Массивы

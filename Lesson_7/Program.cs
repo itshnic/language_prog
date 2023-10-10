@@ -21,17 +21,19 @@ int[,] DoubleArr(int row, int col)
 		for (int j = 0; j < arr.GetLength(1); j++)
 		{
 			arr[i, j] = new Random().Next(0, 10);
+			/* arr[i, j] = arr.GetLength(0) * j + i + 1; */
+			/* arr[i, j] = arr.GetLength(0) * i + j + 1; */
 		}
 	}
 	return arr;
 }
-void PrintArr(int[,] arry)
+void PrintArr(int[,] arr)
 {
-	for (int i = 0; i < arry.GetLength(0); i++)
+	for (int i = 0; i < arr.GetLength(0); i++)
 	{
-		for (int j = 0; j < arry.GetLength(1); j++)
+		for (int j = 0; j < arr.GetLength(1); j++)
 		{
-			Console.Write($"{arry[i, j]}\t");
+			Console.Write($"{arr[i, j]}\t");
 		}
 		Console.WriteLine();
 	}
@@ -39,35 +41,6 @@ void PrintArr(int[,] arry)
 int[,] arrRes = DoubleArr(Question("Введите размер m: "), Question("Введите размер n: "));
 PrintArr(arrRes);
 
-/* Console.Write("Введите размер m: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите размер n: ");
-int n = Convert.ToInt32(Console.ReadLine());
-
-int[,] arr = new int[m, n];
-
-for (int i = 0; i < arr.GetLength(0); i++)
-{
-for (int j = 0; j < arr.GetLength(1); j++)
-{
-	arr[i, j] = arr.GetLength(1) * i + j;
-}
-}
-
-void PrintArr(int[,] arry)
-{
-for (int i = 0; i < arry.GetLength(0); i++)
-{
-	for (int j = 0; j < arry.GetLength(1); j++)
-	{
-		Console.Write($"{arry[i, j]}\t");
-	}
-	Console.WriteLine();
-}
-
-}
-
-PrintArr(arr); */
 
 /* 
 	Задача 51: Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами (0,0); (1; 1) и т.д.Например, задан массив:
@@ -76,3 +49,25 @@ PrintArr(arr); */
 8 4 2 4
 Сумма элементов главной диагонали: 1 + 9 + 2 = 12 */
 
+double Summ(int[,] arr)
+{
+	double summNum = 0;
+	Console.Write("Сумма элементов главной диагонали: ");
+
+	for (int i = 0; i < arr.GetLength(0); i++)
+	{
+		if (i != 0) Console.Write(" + ");
+		for (int j = 0; j < arr.GetLength(1); j++)
+		{
+			if (i == j)
+			{
+				summNum += arr[i, j];
+				Console.Write($"{arr[i, j]}");
+			}
+		}
+
+	}
+	Console.Write($" = {summNum}");
+	return summNum;
+}
+Summ(arrRes);

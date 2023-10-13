@@ -16,14 +16,14 @@ public class Answer
 	public static int[] MinimumSumRow(int[,] matrix)
 	{
 		// Введите свое решение ниже
-		int[] minSummRow = { 1, SumOfRow(matrix, 0) };
+		int[] minSummRow = { 0, SumOfRow(matrix, 0) };
 
-		for (int i = 1; i < matrix.GetLength(0); i++)
+		for (int i = 0; i < matrix.GetLength(0); i++)
 		{
 			if (SumOfRow(matrix, i) < minSummRow[1])
 			{
 				minSummRow[1] = SumOfRow(matrix, i);
-				minSummRow[0] = i + 1;
+				minSummRow[0] = i;
 			}
 		}
 		return minSummRow;

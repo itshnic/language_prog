@@ -72,7 +72,7 @@ PrintArr(arrRes); */
 Summ(arrRes); */
 
 // Task 1
-public class Answer
+/* public class Answer
 {
 	public static double[,] CreateRandomMatrix(int m, int n, int minLimitRandom, int maxLimitRandom)
 	{
@@ -151,7 +151,7 @@ public class Answer
 			PrintArray(result);
 		}
 	}
-}
+} */
 // Task 3
 public class Answer
 {

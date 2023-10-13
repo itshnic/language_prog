@@ -79,8 +79,8 @@ string []text = {"text1", "text2"};
 Массивы менять и дополнять нельзя, только копировать.
 string[,] text = new string[2(строки),5(столбцов)]; - многомерный массив
 text[0, 0] - первая строка/ первый столбец
-text.GetLength(0) - кол-вл строк
-text.GetLength(1) - кол-вл столбцов
+text.GetLength(0) - кол-во строк
+text.GetLength(1) - кол-во столбцов
 ```
 
 ### 8. Function

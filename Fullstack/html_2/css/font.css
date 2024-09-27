@@ -1,5 +1,16 @@
-@import url(../fonts/Gilroy-Bold.woff2);
-@import url(../fonts/Gilroy-Medium.woff2);
-@import url(../fonts/Gilroy-Regular.woff2);
-@import url(../fonts/Gilroy-Semibold.woff2);
-@import url(../fonts/icons-Regular.woff2);
+@font-face {
+	font-family: Gilroy;
+	src: url(../fonts/Gilroy-Bold.woff2);
+}
+@font-face {
+	font-family: Gilroy;
+	src: url(../fonts/Gilroy-Medium.woff2);
+}
+@font-face {
+	font-family: Gilroy;
+	src: url(../fonts/Gilroy-Regular.woff2);
+}
+@font-face {
+	font-family: Gilroy;
+	src: url(../fonts/Gilroy-Semibold.woff2);
+}
